@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - خطأ في الخادم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #1a4d2e 0%, #2d5f3f 50%, #4f7942 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .error-container {
+            background: linear-gradient(135deg, #ffffff 0%, #faf8f3 100%);
+            border-radius: 25px;
+            padding: 60px 50px;
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            border: 3px solid rgba(212, 175, 55, 0.4);
+            position: relative;
+            z-index: 1;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .islamic-icon {
+            font-size: 4em;
+            color: #d4af37;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        .error-code {
+            font-family: 'Amiri', serif;
+            font-size: 8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .error-code::before {
+            content: '⚠';
+            position: absolute;
+            top: -10px;
+            right: -40px;
+            font-size: 0.3em;
+            color: #d4af37;
+            opacity: 0.6;
+        }
+
+        .error-code::after {
+            content: '⚠';
+            position: absolute;
+            bottom: -10px;
+            left: -40px;
+            font-size: 0.3em;
+            color: #d4af37;
+            opacity: 0.6;
+        }
+
+        h1 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 2em;
+            color: #c0392b;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            color: #5d4e37;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .info-text {
+            font-size: 0.95em;
+            color: #8b7355;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 45px;
+            background: linear-gradient(135deg, #2d5f3f 0%, #1a4d2e 100%);
+            color: #f4e4c1;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 77, 46, 0.4);
+            margin: 8px;
+            border: 2px solid #d4af37;
+            font-size: 1.05em;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 77, 46, 0.6);
+            background: linear-gradient(135deg, #1a4d2e 0%, #0f3a1f 100%);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #8b7355 0%, #6b5840 100%);
+            border-color: #d4af37;
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #6b5840 0%, #5d4e37 100%);
+            box-shadow: 0 8px 25px rgba(107, 88, 64, 0.6);
+        }
+
+        .decorative-line {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 25px auto;
+        }
+
+        .button-group {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 40px 30px;
+            }
+
+            .error-code {
+                font-size: 6em;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .btn {
+                padding: 14px 35px;
+                font-size: 1em;
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">500</div>
+        <div class="decorative-line"></div>
+        <h1>خطأ في الخادم</h1>
+        <p>عذراً، حدث خطأ في الخادم. نحن نعمل على إصلاح المشكلة.</p>
+        <div class="info-text">
+            <p style="margin: 0;">يرجى المحاولة مرة أخرى بعد قليل. إذا استمرت المشكلة، يرجى التواصل مع الدعم الفني.</p>
+        </div>
+        <div class="button-group">
+            <a href="/" class="btn"> العودة للصفحة الرئيسية</a>
+            <a href="javascript:window.location.reload()" class="btn btn-secondary">🔄 إعادة المحاولة</a>
+        </div>
+    </div>
+</body>
+</html>

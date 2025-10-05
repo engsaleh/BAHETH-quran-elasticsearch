@@ -1,0 +1,23 @@
+# Flask Framework
+Flask==3.0.0
+Werkzeug==3.0.0
+
+# Data Processing
+pandas>=2.0.0
+python-dotenv>=1.0.0
+
+# Elasticsearch
+elasticsearch>=8.0.0
+
+# Machine Learning / Embeddings (اختياري - للبحث الدلالي)
+# إذا كنت لا تحتاج البحث الدلالي، يمكنك حذف السطرين التاليين
+sentence-transformers>=2.2.0
+torch>=2.0.0
+
+# للإنتاج (اختياري)
+gunicorn>=21.2.0
+
+# ملاحظات:
+# - لتثبيت كل شيء: pip install -r requirements.txt
+# - للتثبيت بدون ML: pip install Flask pandas python-dotenv elasticsearch
+# - flask-cors تم دمجه في الكود، لا حاجة لمكتبة منفصلة
