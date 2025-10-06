@@ -1,6 +1,7 @@
 """
 تطبيق Flask للبحث في القرآن الكريم
 يدعم البحث اللغوي والدلالي والهجين مع واجهة ويب حديثة
+ م.علا صالح
 """
 
 from flask import Flask, render_template, request, jsonify
